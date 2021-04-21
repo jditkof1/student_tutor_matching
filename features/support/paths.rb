@@ -13,7 +13,7 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
-    when /^the home\s?page$/
+    when /^the landing\s?page$/
       '/'
 
     # Add more mappings here.
@@ -22,6 +22,7 @@ module NavigationHelpers
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
 
+     
     else
       begin
         page_name =~ /^the (.*) page$/

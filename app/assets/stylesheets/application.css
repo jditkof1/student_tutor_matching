@@ -13,3 +13,82 @@
  *= require_tree .
  *= require_self
  */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  padding-top: 51px;
+}
+
+
+.bg-primary {
+    background-color: rgba(0, 90, 67, .88)!important;
+}
+
+#page-wrapper {
+  min-height: 100%;
+}
+
+#page-wrapper::after {
+  content: '';
+  display: block;
+}
+
+#page-footer {
+  background: rgba(0, 90, 67, .88);
+  color: #fff;
+  height: 30px;
+  line-height: 30px;
+}
+
+#page-footer>.copyright {
+  margin: 0;
+  padding: 0;
+}
+
+.stripe {
+  margin: 0;
+  padding: 30px;
+}
+.jumbotron.stripe {
+  padding-top: 10px;
+}
+
+
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+  #mastheader {
+    background: #222 url(//placehold.it/1900x768) no-repeat center center scroll;
+    background-size: cover;
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+  #mastheader .fullheight {
+    min-height: 400px;
+  }
+  #mastheader .v-centered {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
