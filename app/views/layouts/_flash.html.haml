@@ -1,0 +1,6 @@
+- if flash[:notice]
+  #notice.alert.alert-info{role: "alert"}
+    = flash[:notice]
+- elsif flash[:warning]
+  #warning.alert.alert-danger{role: "alert"}
+    = flash[:warning]
