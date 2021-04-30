@@ -1,6 +1,6 @@
 
 Then(/^I should see the welcome message$/) do
-  expect(page).to have_content("Welcome to Rotten Potatoes!")
+  expect(page).to have_content("Instructions This is a student tutor pairing service. To use this service, sign in, or sign up with your account, look for a subject and then search for a tutor")
 end
 
 Given /the following profiles exist/ do |profiles_table|
@@ -28,11 +28,11 @@ end
 
 # features/step_definitions/movie_steps.rb
 
-Given /I am logged into RottenPotatoes/ do
+Given /I am logged into Student-Tutor/ do
   steps %Q{
-    Given I am on the RottenPotatoes Landing Page   
+    Given I am on the Student-Tutor Landing Page   
     And I press "Register or Login with GitHub"
-    And I am on the RottenPotatoes Home Page
+    And I am on the Student-Tutor Home Page
     }
 end
 

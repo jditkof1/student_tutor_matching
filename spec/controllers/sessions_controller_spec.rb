@@ -40,7 +40,7 @@ RSpec.describe SessionsController, type: :controller do
           end
           it 'redirects to the home page' do
             post :create, provider: :github
-            expect(response).to redirect_to(pairing_path) 
+            expect(response).to redirect_to(pairing_index_path)
           end
         end
       end

@@ -16,10 +16,10 @@ module NavigationHelpers
     when /^the landing page$/
       root_path
 
-    when /^the RottenPotatoes Home Page$/
-      movies_path
+    when /^the Student-Tutor Home Page$/
+      pairing_index_path
       
-    when /^the RottenPotatoes Landing Page$/
+    when /^the Student-Tutor Landing Page$/
       welcome_landing_path
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
