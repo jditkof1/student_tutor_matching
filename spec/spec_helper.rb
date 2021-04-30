@@ -13,7 +13,29 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+
+require 'omniauth'
+require 'factory_girl_rails'
+
+OmniAuth.config.test_mode = true
+omniauth_hash = { 'provider': 'github',
+                  'uid': "123456",
+                  'info': {
+                      'name': "SUNY Tester",
+                      'email': "stester@binghamton.edu"
+                  }
+}
+ 
+OmniAuth.config.add_mock(:github, omniauth_hash)
+
+
+
 RSpec.configure do |config|
+  config.before(:each) do
+    Rails.application.load_seed # loading seeds
+  end 
+  config.include FactoryGirl::Syntax::Methods
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

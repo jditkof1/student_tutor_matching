@@ -56,7 +56,8 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 end
 
-if RUBY_VERSION>='2.6.0'
+Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:github]   
+if RUBY_VERSION>='2.6.0'  # already there       
   if Rails.version < '5'
     class ActionController::TestResponse < ActionDispatch::TestResponse
     def recycle! 

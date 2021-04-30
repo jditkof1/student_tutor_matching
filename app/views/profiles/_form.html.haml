@@ -1,0 +1,28 @@
+= form_for @profile do |f|
+  - if @profile.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@profile.errors.count, "error")} prohibited this profile from being saved:"
+      %ul
+        - @profile.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :primary_language
+    = f.text_field :primary_language
+  .field
+    = f.label :secondary_language
+    = f.text_field :secondary_language
+  .field
+    = f.label :favorite_movie
+    = f.text_field :favorite_movie
+  .field
+    = f.label :worst_movie
+    = f.text_field :worst_movie
+  .field
+    = f.label :favorite_genre
+    = f.text_field :favorite_genre
+  .field
+    = f.label :user
+    = f.text_field :user
+  .actions
+    = f.submit 'Save'

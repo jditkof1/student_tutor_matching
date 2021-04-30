@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Primary language:
+  = @profile.primary_language
+%p
+  %b Secondary language:
+  = @profile.secondary_language
+%p
+  %b Favorite movie:
+  = @profile.favorite_movie
+%p
+  %b Worst movie:
+  = @profile.worst_movie
+%p
+  %b Favorite genre:
+  = @profile.favorite_genre
+%p
+  %b User:
+  = @profile.user
+
+= link_to 'Edit', edit_profile_path(@profile)
+\|
+= link_to 'Back', profiles_path

@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+profiles = [{:primary_language => 'English', :secondary_language => 'I', :favorite_movie => 'Up', :worst_movie => 'Down', :favorite_genre => 'SF', :user_id => 1}
+     ]
+
+profiles.each do |profile|
+  Profile.create!(profile)
+end
