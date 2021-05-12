@@ -1,0 +1,7 @@
+%h2 Edit Existing Movie
+= form_tag subject_path(@subject), :method => :put do
+  = label :subject, :title, 'Title', :class => 'col-form-label'
+  = text_field :subject, 'title', :class => 'form-control'
+  %br/
+  = submit_tag 'Update Subject Info', :class => 'btn btn-primary'
+  = link_to 'Cancel', subjects_path, :class => 'btn btn-secondary'

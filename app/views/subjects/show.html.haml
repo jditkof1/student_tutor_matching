@@ -1,0 +1,17 @@
+%h3 Details about #{@subject.title}
+
+%ul#details
+  %li
+    Subject code:
+    = @subject.subjectcode
+  %li
+    Title:
+    = @subject.title
+
+%h4 Description:
+
+%p#description= @subject.description
+
+= link_to 'Edit', edit_subject_path(@subject)
+= button_to 'Delete', subject_path(@subject), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-primary'
+= link_to 'Back to Subject list', subjects_path

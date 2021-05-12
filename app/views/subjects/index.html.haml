@@ -1,0 +1,21 @@
+/ This file is app/views/movies/index.html.erb
+%h2 All Subjects
+  
+%table#movies.table.table-striped.col-md-12
+  %thead
+    %tr
+      %th Title
+  %tbody
+    - @subjects.each do |subject|
+      %tr
+        %td
+          = subject.title
+        %td
+          = link_to "More about #{subject.title}", subject_path(subject)
+        %td
+          = link_to 'Show', subject
+        %td
+          = link_to 'Edit', edit_subject_path(subject)
+        %td
+          = link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' }
+
