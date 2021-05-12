@@ -7,7 +7,15 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
     %nav.navbar.navbar-expand-lg.bg-primary.text-white.mb-3
-      %h1.title Student-Tutor Pairing
+      %h1
+      - unless @action == 'login'
+        = link_to " Student-Tutor Pairing ", pairing_index_path
+        &nbsp&nbsp&nbsp&nbsp
+        = link_to " Browse Subjects", subjects_path
+        &nbsp&nbsp&nbsp&nbsp
+        = link_to " Add subject ", new_subject_path
+      - else
+        = link_to "Student-Tutor Pairing", welcome_landing_path 
     .container
       = render 'layouts/flash'
       %main#main
