@@ -9,9 +9,7 @@
     %nav.navbar.navbar-expand-lg.bg-primary.text-white.mb-3
       %h1
       - unless @action == 'login'
-        = link_to " Student-Tutor Pairing ", pairing_index_path
-        &nbsp&nbsp&nbsp&nbsp
-        = link_to " Browse Subjects", subjects_path
+        = link_to " Student-Tutor Pairing ", subjects_path
         &nbsp&nbsp&nbsp&nbsp
         = link_to " Add subject ", new_subject_path
       - else

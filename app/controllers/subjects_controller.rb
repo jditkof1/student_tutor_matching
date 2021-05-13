@@ -20,20 +20,11 @@ class SubjectsController < ApplicationController
   def edit
   end
 
-  # POST /movies
-  # POST /movies.json
   def create
-    @subject = Subject.new(subject_params)
-
-    respond_to do |format|
-      if @subject.save
-        format.html { redirect_to @subject, notice: 'Subject was successfully created.' }
-        format.json { render :show, status: :created, location: @subject }
-      else
-        format.html { render :new }
-        format.json { render json: @subject.errors, status: :unprocessable_entity }
-      end
-    end
+    p subject_params
+    @subject = Subject.create!(subject_params)
+    flash[:notice] = "#{@subject.title} was successfully created."
+    redirect_to subjects_path
   end
 
   # PATCH/PUT /movies/1
