@@ -21,6 +21,8 @@ module NavigationHelpers
       
     when /^the Student-Tutor Landing Page$/
       welcome_landing_path
+    when /^the Browse Subjects Page$/
+      subjects_path
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
