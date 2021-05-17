@@ -60,7 +60,33 @@ describe SubjectsController, type: :controller do
       expect(response).to redirect_to(subjects_path)
     end
   end
-  
- 
+
+  describe '#show' do
+    before(:each) do
+      @user = User.create!(name: 'SUNY Tester', email: 'stester@binghamton.edu')
+      @auth = Authorization.create!(provider: "github", uid: "123456", user_id: @user.id)
+      session[:user_id] = @user.id      
+      @current_user = @user      
+    end
+    let(:subject) {instance_double('Subject', subjectcode: '12345', title: 'Economics', description: 'Econ', create_date: '1977-05-25')}
+    let(:id1) {'1'}
+    before(:each) do 
+      allow(Subject).to receive(:find).with(id1).and_return(subject)
+    end
+    it 'Retrieves the subject' do
+      expect(controller).to receive(:get_subject).and_return(subject)
+      get :show, id: id1 
+    end
+    it 'selects the show template for rendering' do
+      allow(controller).to receive(:get_subject).and_return(subject)
+      get :show, id: id1 
+      expect(response).to render_template('show') 
+    end
+    it 'makes the subject available to the template' do
+      allow(controller).to receive(:get_subject).and_return(subject)
+      get :show, id: id1 
+      expect(assigns(:subject)).to eq(subject)
+    end
+  end
   
 end

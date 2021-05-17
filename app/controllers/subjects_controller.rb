@@ -1,5 +1,6 @@
 class SubjectsController < ApplicationController
    
+  
   def index
     @subjects = Subject.all 
   end
@@ -8,6 +9,7 @@ class SubjectsController < ApplicationController
   # GET /movies/1.json
   def show
     id = params[:id] # retrieve movie ID from URI route
+    p Subject.all
     @subject = Subject.find(id)
   end
 
@@ -53,8 +55,12 @@ class SubjectsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_movie
+    def set_subject
       @subject = Subject.find(params[:id])
+    end
+  
+    def get_subject
+      @subject
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
