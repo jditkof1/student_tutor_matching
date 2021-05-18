@@ -22,7 +22,9 @@ Given /the following authorizations exist/ do |authorizations_table|
 end
 
  Then /^I will see "([^"]*)"$/ do |message|
+   #p page.body
    expect(page.body).to have_content(message)
+   
  end
 
 

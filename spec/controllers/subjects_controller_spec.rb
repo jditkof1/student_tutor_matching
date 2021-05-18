@@ -60,7 +60,6 @@ describe SubjectsController, type: :controller do
       expect(response).to redirect_to(subjects_path)
     end
   end
-
   describe '#show' do
     before(:each) do
       @user = User.create!(name: 'SUNY Tester', email: 'stester@binghamton.edu')
@@ -68,25 +67,111 @@ describe SubjectsController, type: :controller do
       session[:user_id] = @user.id      
       @current_user = @user      
     end
-    let(:subject) {instance_double('Subject', subjectcode: '12345', title: 'Economics', description: 'Econ', create_date: '1977-05-25')}
+    let(:subject1) {instance_double('Subject', subjectcode: '12345', title: 'Economics', description: 'Econ', create_date: '1977-05-25')}
     let(:id1) {'1'}
-    before(:each) do 
-      allow(Subject).to receive(:find).with(id1).and_return(subject)
-    end
     it 'Retrieves the subject' do
-      expect(controller).to receive(:get_subject).and_return(subject)
+      expect(controller).to receive(:set_subject).and_return(subject1)
       get :show, id: id1 
     end
     it 'selects the show template for rendering' do
-      allow(controller).to receive(:get_subject).and_return(subject)
+      allow(controller).to receive(:set_subject).and_return(subject1)
       get :show, id: id1 
-      expect(response).to render_template('show') 
+      expect(response).to render_template('show')  
     end
     it 'makes the subject available to the template' do
-      allow(controller).to receive(:get_subject).and_return(subject)
+      allow(controller).to receive(:set_subject).and_return(subject1)
       get :show, id: id1 
+      expect(assigns(:subject)).to eq(subject1)
+    end
+  end
+  describe '#edit' do
+    before(:each) do
+      @user = User.create!(name: 'SUNY Tester', email: 'stester@binghamton.edu')
+      @auth = Authorization.create!(provider: "github", uid: "123456", user_id: @user.id)
+      session[:user_id] = @user.id      
+      @current_user = @user      
+    end
+    let(:id1) {'1'}
+    let(:subject){instance_double('Subject', subjectcode: '12345', title: 'Economics', description: 'Econ', create_date: '1977-05-25')}
+    it 'Retrieves the subject' do
+      expect(controller).to receive(:set_subject).and_return(subject)
+      get :edit, id: id1 
+    end
+    it 'selects the Edit template for rendering' do
+      allow(controller).to receive(:set_subject).and_return(subject)
+      get :edit, id: id1 
+      expect(response).to render_template('edit') 
+    end
+    it 'makes the subject available to the template' do
+      allow(controller).to receive(:set_subject).and_return(subject)
+      get :edit, id: id1 
       expect(assigns(:subject)).to eq(subject)
     end
   end
-  
+  describe '#destroy' do
+    before(:each) do
+      @user = User.create!(name: 'SUNY Tester', email: 'stester@binghamton.edu')
+      @auth = Authorization.create!(provider: "github", uid: "123456", user_id: @user.id)
+      session[:user_id] = @user.id      
+      @current_user = @user      
+    end
+    let(:id1) {'1'}
+    let(:subject) {instance_double('Subject', subjectcode: '12345', title: 'Economics', description: 'Econ', create_date: '1977-05-25')}
+    it 'Retrieves the subject' do
+      expect(controller).to receive(:set_subject).and_return(subject)
+      allow(subject).to receive(:destroy)
+      delete :destroy, :id => id1
+    end    
+    it 'Calls the destroy method to delete the subject' do
+      allow(controller).to receive(:set_subject).and_return(subject)
+      expect(subject).to receive(:destroy)
+      delete :destroy, :id => id1
+    end
+    it 'Sets the flash message' do
+      allow(controller).to receive(:set_subject).and_return(subject)
+      allow(subject).to receive(:destroy)
+      delete :destroy, :id => id1
+      expect(flash[:notice]).to match(/^Subject \'[^']*\' deleted.$/)  
+    end
+    it 'Redirects to the subjects page' do
+      allow(controller).to receive(:set_subject).and_return(subject)
+      allow(subject).to receive(:destroy)
+      delete :destroy, :id => id1
+      expect(response).to redirect_to(subjects_path)
+    end
+  end
+  describe '#update' do
+    before(:each) do
+      @user = User.create!(name: 'SUNY Tester', email: 'stester@binghamton.edu')
+      @auth = Authorization.create!(provider: "github", uid: "123456", user_id: @user.id)
+      session[:user_id] = @user.id      
+      @current_user = @user      
+    end
+    let(:params) { {subjectcode: '12345', title: 'Economics', description: 'Econ', create_date: '1977-05-25'} }
+    let(:subject) { instance_double('Subject', params)}
+    let(:id1) {'1'}
+    let(:updated){ instance_double('Subject', title: 'Zoology', description: 'Animals') }
+    it 'Retrieves the subject' do
+      expect(controller).to receive(:set_subject).and_return(subject)
+      allow(subject).to receive(:update_attributes!).with(params)
+      put :update, id: id1, subject: params
+    end
+    it 'Updates the subject attributes' do
+      allow(controller).to receive(:set_subject).and_return(subject)
+      expect(subject).to receive(:update_attributes!).with(params).and_return(updated)
+      put :update, id: id1, subject: params
+    end
+    it 'Sets a flash message' do
+      allow(controller).to receive(:set_subject).and_return(subject)
+      allow(subject).to receive(:update_attributes!).with(params).and_return(updated)
+      put :update, id: id1, subject: params
+      expect(flash[:notice]).to match(/^.* was successfully updated.$/)  
+    end
+    it 'Redirects to the subjects page' do
+      allow(controller).to receive(:set_subject).and_return(subject)
+      allow(subject).to receive(:update_attributes!).with(params).and_return(updated)
+      put :update, id: id1, subject: params
+      expect(response).to redirect_to(subject_path(subject))
+    end
+  end
 end

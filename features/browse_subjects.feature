@@ -20,7 +20,7 @@ Background: authorization and user in database  # <---- Add this block
 
 @omniauth_test5  
 Scenario: browse subjects
-Then I will see "Browse Subjects"
+Then I will see "Student-Tutor Pairing"
 And I will see "Add subject"
 
 @omniauth_test6

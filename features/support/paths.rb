@@ -17,7 +17,7 @@ module NavigationHelpers
       root_path
 
     when /^the Student-Tutor Home Page$/
-      pairing_index_path
+      pairings_path
       
     when /^the Student-Tutor Landing Page$/
       welcome_landing_path
