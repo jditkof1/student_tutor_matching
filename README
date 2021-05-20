@@ -1,1 +1,11 @@
-Making yet another change
+Instructions to follow for local setup on codio.
+git clone <repository url>
+bundle install --without production
+bundle exec figaro install --generates config/application.yml file
+Update dev settings on github account
+copy client id and key to application.yml file
+rake db:migrate  --database setup
+rake db:migrate RAILS_ENV=test
+rake spec
+rake cucumber
+rails server -b 0.0.0.0
