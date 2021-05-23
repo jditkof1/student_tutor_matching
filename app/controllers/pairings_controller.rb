@@ -1,4 +1,4 @@
-class PairingController < ApplicationController
+class PairingsController < ApplicationController
   before_action :set_pairing, only: [:show, :edit, :update, :destroy]
   
   def index

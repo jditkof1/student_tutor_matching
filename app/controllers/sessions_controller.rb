@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
         self.current_user= auth.user
         message = "Welcome back #{@user.name}! You have logged in via #{auth.provider}."
         flash[:notice] = message
-        redirect_to pairing_index_path
+        redirect_to subjects_path
       else #register
         @user = User.create_with_omniauth(auth_hash['info'])
         auth = Authorization.create_with_omniauth(auth_hash, @user)

@@ -1,0 +1,9 @@
+%h2 Create New Subject
+= form_tag subjects_path do
+  = label :subject, :subjectcode, 'Subject Code', :class => 'col-form-label'
+  = text_field :subject, :subjectcode, :class => 'form-control'
+  = label :subject, :title, 'Title', :class => 'col-form-label'
+  = text_field :subject, :title, :class => 'form-control'
+  %br
+  = submit_tag 'Save Changes', :class => 'btn btn-primary'
+  = link_to 'Cancel', subjects_path, :class => 'btn btn-secondary'

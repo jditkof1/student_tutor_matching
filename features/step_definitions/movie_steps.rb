@@ -22,7 +22,9 @@ Given /the following authorizations exist/ do |authorizations_table|
 end
 
  Then /^I will see "([^"]*)"$/ do |message|
+   #p page.body
    expect(page.body).to have_content(message)
+   
  end
 
 
@@ -35,7 +37,14 @@ Given /I am logged into Student-Tutor/ do
     And I am on the Student-Tutor Home Page
     }
 end
-
+Given /the following subjects exist/ do |subjects_table|
+  subjects_table.hashes.each do |subject|
+    # each returned element will be a hash whose key is the table header.
+    # you should arrange to add that movie to the database here.
+      Subject.create(subject)
+  end
+  #fail "Unimplemented"
+end
 
 # Then /^I will see "([^"]*)"$/ do |message|
 #  puts page.body # <---

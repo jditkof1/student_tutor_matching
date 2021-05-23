@@ -17,10 +17,12 @@ module NavigationHelpers
       root_path
 
     when /^the Student-Tutor Home Page$/
-      pairing_index_path
+      pairings_path
       
     when /^the Student-Tutor Landing Page$/
       welcome_landing_path
+    when /^the Browse Subjects Page$/
+      subjects_path
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
