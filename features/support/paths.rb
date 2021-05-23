@@ -23,6 +23,9 @@ module NavigationHelpers
       welcome_landing_path
     when /^the Browse Subjects Page$/
       subjects_path
+      
+    when /^the Schedule a session Page$/
+      schedules_path
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
