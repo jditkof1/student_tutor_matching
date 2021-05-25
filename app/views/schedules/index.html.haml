@@ -1,0 +1,21 @@
+/ This file is app/views/movies/index.html.erb
+%h2 All Schedules
+  
+%table#movies.table.table-striped.col-md-12
+  %thead
+    %tr
+      %th Available Tutors
+  %tbody
+    - @schedules.each do |schedule|
+      %tr
+        %td
+          = schedule.subject
+        %td
+          = link_to "More about #{schedule.subject}", schedule_path(schedule)
+        %td
+          = link_to 'Show', schedule
+        %td
+          = link_to 'Edit', edit_schedule_path(schedule)
+        %td
+          = link_to 'Destroy', schedule, method: :delete, data: { confirm: 'Are you sure?' }
+

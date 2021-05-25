@@ -1,7 +1,7 @@
 Feature:
 As a student
 I want to schedule an appointment
-So that I get a tutor session
+So that I can get a tutor session
 
 Background: authorization and user in database  # <---- Add this block
 
@@ -25,10 +25,10 @@ Background: authorization and user in database  # <---- Add this block
 
 @omniauth_test7  
 Scenario: schedule a session
-Then I will see "Schedule a session"
+Then I will see "Schedule a Session"
 
 @omniauth_test8
 Scenario: adding a session
-Given I am on the Schedule a session page
+Given I am on Schedule a Session Page
 Then I will see "Available Tutors"
 

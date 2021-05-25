@@ -1,0 +1,9 @@
+%h2 Create New Subject
+= form_tag schedules_path do
+  = label :schedule, :schedulecode, 'Schedule Code', :class => 'col-form-label'
+  = text_field :schedule, :schedulecode, :class => 'form-control'
+  = label :schedule, :title, 'Title', :class => 'col-form-label'
+  = text_field :schedule, :title, :class => 'form-control'
+  %br
+  = submit_tag 'Save Changes', :class => 'btn btn-primary'
+  = link_to 'Cancel', schedules_path, :class => 'btn btn-secondary'

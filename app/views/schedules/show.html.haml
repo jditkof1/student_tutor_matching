@@ -1,0 +1,17 @@
+%h3 Details about #{@schedule.title}
+
+%ul#details
+  %li
+    Schedule code:
+    = @schedule.schedulecode
+  %li
+    Title:
+    = @schedule.title
+
+%h4 Description:
+
+%p#description= @schedule.description
+
+= link_to 'Edit', edit_schedule_path(@schedule)
+= button_to 'Delete', schedule_path(@schedule), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-primary'
+= link_to 'Back to Schedule list', schedules_path

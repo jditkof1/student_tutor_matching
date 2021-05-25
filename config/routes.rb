@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   root 'welcome#landing'
   
-  
+  get 'schedules/index'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

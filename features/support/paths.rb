@@ -24,7 +24,7 @@ module NavigationHelpers
     when /^the Browse Subjects Page$/
       subjects_path
       
-    when /^the Schedule a session Page$/
+    when /^Schedule a Session Page$/
       schedules_path
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

@@ -1,0 +1,7 @@
+%h2 Edit Existing Movie
+= form_tag schedule_path(@schedule), :method => :put do
+  = label :schedule, :title, 'Title', :class => 'col-form-label'
+  = text_field :schedule, 'title', :class => 'form-control'
+  %br/
+  = submit_tag 'Update Schedule Info', :class => 'btn btn-primary'
+  = link_to 'Cancel', schedules_path, :class => 'btn btn-secondary'

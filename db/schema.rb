@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210523212340) do
+ActiveRecord::Schema.define(version: 20210525150804) do
 
   create_table "authorizations", force: :cascade do |t|
     t.string   "provider"
@@ -59,9 +59,12 @@ ActiveRecord::Schema.define(version: 20210523212340) do
     t.string   "subject"
     t.string   "student"
     t.datetime "timeslot"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "subjects_id"
   end
+
+  add_index "schedules", ["subjects_id"], name: "index_schedules_on_subjects_id"
 
   create_table "subjects", force: :cascade do |t|
     t.string   "subjectcode"
