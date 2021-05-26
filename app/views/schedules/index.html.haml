@@ -1,6 +1,8 @@
 / This file is app/views/movies/index.html.erb
 %h2 All Schedules
-  
+
+= link_to 'Add a session', new_schedule_path
+
 %table#movies.table.table-striped.col-md-12
   %thead
     %tr
@@ -10,8 +12,6 @@
       %tr
         %td
           = schedule.subject
-        %td
-          = link_to "More about #{schedule.subject}", schedule_path(schedule)
         %td
           = link_to 'Show', schedule
         %td

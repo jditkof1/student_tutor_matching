@@ -23,7 +23,7 @@ class SchedulesController < ApplicationController
 
   def create
     @schedule = Schedule.create!(schedule_params)
-    flash[:notice] = "#{@schedule.title} was successfully created."
+    flash[:notice] = "Appointment for #{@schedule.subject} was successfully created."
     redirect_to schedules_path
   end
 
@@ -32,7 +32,7 @@ class SchedulesController < ApplicationController
   def update
     @schedule = set_schedule
     @schedule.update_attributes!(schedule_params)
-    flash[:notice] = "#{@schedule.title} was successfully updated."
+    flash[:notice] = "Appointment for #{@schedule.subject} was successfully updated."
     redirect_to schedule_path(@schedule)
   end
 
@@ -40,7 +40,7 @@ class SchedulesController < ApplicationController
   def destroy
     @schedule = set_schedule
     @schedule.destroy
-    flash[:notice] = "Schedule '#{@schedule.title}' deleted."
+    flash[:notice] = "Appointment for '#{@schedule.subject}' deleted."
     redirect_to schedules_path
   end
 
@@ -53,7 +53,7 @@ class SchedulesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def schedule_params
-      params.require(:schedule).permit(:schedulecode, :title, :description, :create_date)
+      params.require(:schedule).permit(:tutor, :subject, :student, :timeslot)
     end
   
 end

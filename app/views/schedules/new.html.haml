@@ -1,9 +1,12 @@
-%h2 Create New Subject
+%h2 Create New Appointment
 = form_tag schedules_path do
-  = label :schedule, :schedulecode, 'Schedule Code', :class => 'col-form-label'
-  = text_field :schedule, :schedulecode, :class => 'form-control'
-  = label :schedule, :title, 'Title', :class => 'col-form-label'
-  = text_field :schedule, :title, :class => 'form-control'
+  = label :schedule, :tutor, 'Tutor', :class => 'col-form-label'
+  = text_field :schedule, :tutor, :class => 'form-control'
+  = label :schedule, :subject, 'Subject', :class => 'col-form-label'
+  = text_field :schedule, :subject, :class => 'form-control'
+  = label :schedule, :timeslot, 'Time slot', :class => 'col-form-label'
+  = text_field :schedule, :timeslot, :class => 'form-control'
+  
   %br
   = submit_tag 'Save Changes', :class => 'btn btn-primary'
   = link_to 'Cancel', schedules_path, :class => 'btn btn-secondary'
