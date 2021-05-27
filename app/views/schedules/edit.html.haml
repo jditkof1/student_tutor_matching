@@ -1,0 +1,7 @@
+%h2 Edit Existing Appointment
+= form_tag schedule_path(@schedule), :method => :put do
+  = label :schedule, :timeslot, 'Time slot', :class => 'col-form-label'
+  = text_field :schedule, :timeslot, :class => 'form-control'
+  %br/
+  = submit_tag 'Update Schedule Info', :class => 'btn btn-primary'
+  = link_to 'Cancel', schedules_path, :class => 'btn btn-secondary'

@@ -1,0 +1,16 @@
+%h3 Details about your appointment
+
+%ul#details
+  %li
+    Subject:
+    = @schedule.subject
+  %li
+    Tutor:
+    = @schedule.tutor
+  %li 
+    Time slot:
+    = @schedule.timeslot
+
+= link_to 'Edit', edit_schedule_path(@schedule)
+= button_to 'Delete', schedule_path(@schedule), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-primary'
+= link_to 'Back to Schedule list', schedules_path

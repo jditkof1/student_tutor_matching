@@ -46,6 +46,15 @@ Given /the following subjects exist/ do |subjects_table|
   #fail "Unimplemented"
 end
 
+Given /the following schedules exist/ do |schedules_table|
+  schedules_table.hashes.each do |schedule|
+    # each returned element will be a hash whose key is the table header.
+    # you should arrange to add that movie to the database here.
+      Schedule.create(schedule)
+  end
+  #fail "Unimplemented"
+end
+
 # Then /^I will see "([^"]*)"$/ do |message|
 #  puts page.body # <---
 #  expect(page.body).to have_content(message)
