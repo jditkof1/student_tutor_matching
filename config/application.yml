@@ -16,7 +16,7 @@ production:
   
 
 development:
-  GITHUB_CLIENT_ID: 'c12ba4429e02c84e74a4' 
-  GITHUB_CLIENT_SECRET: 'c92a9343c0cb33880b0f864aac1d50ef76e0a1f7'
+  GITHUB_CLIENT_ID: '' 
+  GITHUB_CLIENT_SECRET: ''
 
  
