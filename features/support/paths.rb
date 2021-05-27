@@ -26,6 +26,9 @@ module NavigationHelpers
       
     when /^Schedule a Session Page$/
       schedules_path
+      
+    when /^the about us page$/
+      about_index_path
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
