@@ -36,7 +36,7 @@ class SessionsController < ApplicationController
   
   def debug
     puts '\n raw auth_hash\n'
-    p @auth_hash
+    #p @auth_hash
     puts '\n\nauth_hash by key\n'
     @auth_hash.each_pair do |key, value|
       puts "\nKEY: #{key}"
@@ -83,6 +83,6 @@ class SessionsController < ApplicationController
   def auth_hash
     #ensures that it's only retrieved once per cycle
     @auth_hash ||= request.env['omniauth.auth']
-    p @auth_hash
+    #p @auth_hash
   end
 end

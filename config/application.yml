@@ -11,12 +11,12 @@
 production:
   #stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
   #stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
-  heroku config:add GITHUB_CLIENT_ID: '920f079244804fa88624'
-  heroku config:add GITHUB_CLIENT_SECRET: '6ba156565b2c056cd2fe2da8bb7ee884056844ff'
+  heroku config:add GITHUB_CLIENT_ID='920f079244804fa88624'
+  heroku config:add GITHUB_CLIENT_SECRET='6ba156565b2c056cd2fe2da8bb7ee884056844ff'
   
 
 development:
-  GITHUB_CLIENT_ID: '' 
-  GITHUB_CLIENT_SECRET: ''
+  GITHUB_CLIENT_ID: 'b26a448fb36889d1099f' 
+  GITHUB_CLIENT_SECRET: '028b8ad94ce67c46c128e61a83d5666dc92a27b4'
 
  

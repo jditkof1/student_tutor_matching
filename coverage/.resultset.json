@@ -160,7 +160,7 @@
           null,
           1,
           0,
-          0,
+          null,
           0,
           0,
           0,
@@ -207,7 +207,7 @@
           1,
           null,
           26,
-          26,
+          null,
           null,
           null
         ]
@@ -459,97 +459,9 @@
           null,
           null
         ]
-      },
-      "/home/codio/workspace/student_tutor_matching/app/controllers/movies_controller.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/codio/workspace/student_tutor_matching/app/models/movie.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1622146971
+    "timestamp": 1622222011
   },
   "RSpec": {
     "coverage": {
@@ -713,7 +625,7 @@
           null,
           1,
           0,
-          0,
+          null,
           0,
           0,
           0,
@@ -760,7 +672,7 @@
           1,
           null,
           45,
-          45,
+          null,
           null,
           null
         ]
@@ -905,6 +817,35 @@
           null
         ]
       },
+      "/home/codio/workspace/student_tutor_matching/app/controllers/pairings_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/home/codio/workspace/student_tutor_matching/app/controllers/profiles_controller.rb": {
         "lines": [
           0,
@@ -981,35 +922,6 @@
         "branches": {
         }
       },
-      "/home/codio/workspace/student_tutor_matching/app/controllers/pairings_controller.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          null,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/home/codio/workspace/student_tutor_matching/app/controllers/about_controller.rb": {
         "lines": [
           0,
@@ -1021,6 +933,6 @@
         }
       }
     },
-    "timestamp": 1622147165
+    "timestamp": 1622222021
   }
 }

@@ -9,3 +9,7 @@
 #rake spec
 #rake cucumber
 #rails server -b 0.0.0.0
+
+For heroku, run: 
+  heroku config:add GITHUB_CLIENT_ID='123456789'
+  heroku config:add GITHUB_CLIENT_SECRET='1234567890FFFFFF'
